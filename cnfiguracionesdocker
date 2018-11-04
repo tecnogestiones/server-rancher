@@ -1,0 +1,4 @@
+docker run -d --name=nginx --restart=unless-stopped -p 80:80 -p 443:443 -v /etc/letsencrypt: /etc/letsencrypt -v https://github.com/tecnogestiones/server-rancher.git/nginx.conf: /etc/nginx/conf.d/default.conf --link=rancher-server nginx
+
+
+docker run -d --name=rancher-server --restart=unless-stopped -p 8080:8080 rancher/server
